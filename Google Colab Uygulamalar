@@ -1,1 +1,29 @@
 
+import os
+import cv2
+from PIL import Image
+import numpy as np
+import tensorflow as tf
+
+
+device_name=tf.test.gpu_device_name()
+if device_name!='/device:GPU:0':
+  raise SystemError('GPU device not found')
+print('Found GPU at:{}'.format(device_name))
+
+image_directory='/content/drive/MyDrive/Colab Notebooks/data/covid19/BCI (1).jpg'
+
+from skimage import io
+from matplotlib import pyplot as plt
+img = io.imread("/content/drive/MyDrive/Colab Notebooks/data/covid19/BCI (1).jpg")
+img2=io.imread(image_directory)
+print(img.shape)
+plt.imshow(img)
+
+plt.imshow(img2)
+
+plt.imshow(img2)
+
+##Kod ile ayrıca drive mount 
+from google.colab import drive
+drive.mount('/content/drive')
